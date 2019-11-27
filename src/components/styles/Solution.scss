@@ -1,0 +1,35 @@
+.Solution {
+  background-color: #f6f6f6;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  .Solution__Container {
+    width: 80%;
+    h2 {
+      font-size: 2rem;
+    }
+    img {
+      margin: 2rem;
+    }
+    h3 {
+      margin: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    .process {
+      width: 47rem;
+      margin: 0;
+      margin-bottom: 2.5rem;
+    }
+    button {
+      background-color: #f84848;
+      border: none;
+      color: #fff;
+      padding: 1rem 4rem;
+      font-weight: 600;
+    }
+  }
+}
