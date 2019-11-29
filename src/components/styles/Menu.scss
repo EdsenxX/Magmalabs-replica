@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   position: absolute;
+  z-index: 1;
   .Menu__container {
     width: 95%;
     display: flex;
@@ -24,6 +25,11 @@
         li {
           cursor: pointer;
           font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          // &:hover{
+          //   border-top: 1px solid red;
+          // }
           &:last-child {
             color: red;
           }
@@ -36,68 +42,4 @@
 .sticky {
   position: fixed;
   background: #362f2f;
-  z-index: 1;
 }
-
-// @-webkit-keyframes fadeInDown {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translatey(-10px);
-//     -moz-transform: translatey(-10px);
-//     -o-transform: translatey(-10px);
-//     transform: translatey(-10px);
-//   }
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translatey(0);
-//     -moz-transform: translatey(0);
-//     -o-transform: translatey(0);
-//     transform: translatey(0);
-//   }
-// }
-// @-moz-keyframes fadeInDown {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translatey(-10px);
-//     -moz-transform: translatey(-10px);
-//     -o-transform: translatey(-10px);
-//     transform: translatey(-10px);
-//   }
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translatey(0);
-//     -moz-transform: translatey(0);
-//     -o-transform: translatey(0);
-//     transform: translatey(0);
-//   }
-// }
-// @keyframes fadeInDown {
-//   from {
-//     opacity: 0;
-//     -webkit-transform: translatey(-10px);
-//     -moz-transform: translatey(-10px);
-//     -o-transform: translatey(-10px);
-//     transform: translatey(-10px);
-//   }
-//   to {
-//     opacity: 1;
-//     -webkit-transform: translatey(0);
-//     -moz-transform: translatey(0);
-//     -o-transform: translatey(0);
-//     transform: translatey(0);
-//   }
-// }
-// .in-down {
-//   -webkit-animation-name: fadeInDown;
-//   -moz-animation-name: fadeInDown;
-//   -o-animation-name: fadeInDown;
-//   animation-name: fadeInDown;
-//   -webkit-animation-fill-mode: both;
-//   -moz-animation-fill-mode: both;
-//   -o-animation-fill-mode: both;
-//   animation-fill-mode: both;
-//   -webkit-animation-duration: 1s;
-//   -moz-animation-duration: 1s;
-//   -o-animation-duration: 1s;
-//   animation-duration: 1s;
-// }

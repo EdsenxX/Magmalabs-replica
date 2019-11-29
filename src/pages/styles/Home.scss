@@ -21,19 +21,34 @@
         margin: 1.5rem;
         font-size: 1rem;
       }
-      ul {
-        margin-top: 2rem;
+      // ul {
+      //   margin-top: 2rem;
+      //   display: flex;
+      //   justify-content: center;
+      //   list-style: none;
+      //   li {
+      //     color: #fff;
+      //     margin: 1rem;
+      //     // display: flex;
+      //     // align-items: center;
+      //     &::before {
+      //       content: "•";
+      //       margin-right: 0.5rem;
+      //       color: #f84848;
+      //       font-size: 3rem;
+      //     }
+      //   }
+      // }
+      .technologies {
         display: flex;
         justify-content: center;
-        list-style: none;
-        li {
-          color: #fff;
-          margin: 1rem;
+        font-size: 1.2em;
+        p{
+          font-size: 100%;
           &::before {
-            content: "•";
+            content: "• ";
+            font-size: 100%;
             color: #f84848;
-            margin: 0.5rem;
-            font-size: 3rem;
           }
         }
       }

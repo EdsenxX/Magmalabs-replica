@@ -35,13 +35,20 @@ class Home extends Component {
               execute their vision.{" "}
             </h1>
             <p>With loyal teams achieving quick turn-around. </p>
-            <ul>
+            {/* <ul>
               <li>Ruby on Rails</li>
               <li>React</li>
               <li>React Native</li>
               <li>Solidus</li>
               <li>UX desing</li>
-            </ul>
+            </ul> */}
+            <div className="technologies">
+              <p>Ruby on Rails</p>
+              <p>React</p>
+              <p>React Native</p>
+              <p>Solidus</p>
+              <p>UX desing</p>
+            </div>
           </div>
         </div>
         <Products />

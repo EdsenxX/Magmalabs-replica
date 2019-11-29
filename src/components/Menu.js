@@ -5,16 +5,15 @@ import "./styles/Menu.scss";
 import Logo from "../assets/img/menu/magmalabs-logo.png";
 
 function Menu(props) {
+  const Menu = document.getElementById("Menu");
   if (props.stickyMenu) {
-    document
-      .getElementById("Menu")
-      .classList.add("sticky", "animated", "fadeInDown");
+    Menu.classList.add("sticky", "animated", "fadeInDown");
   } else {
-    if (document.getElementById("Menu")) {
-      document
-        .getElementById("Menu")
-        .classList.remove("sticky", "animated", "fadeInDown");
-      // document.getElementById("Menu").classList.add("fadeOutUp");
+    if (Menu) {
+      // if (Menu.classList.contains("fadeInDown")) {
+      //   Menu.classList.add("fadeOutUp");
+      // }
+      Menu.classList.remove("sticky", "animated", "fadeInDown");
     }
   }
 

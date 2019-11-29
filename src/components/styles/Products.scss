@@ -29,6 +29,10 @@
       }
       .link {
         color: #f84848;
+        cursor: pointer;
+        &:hover{
+          font-weight: 800;
+        }
       }
     }
   }
