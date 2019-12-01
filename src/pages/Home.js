@@ -1,18 +1,28 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import Menu from "../components/Menu";
 import "./styles/Home.scss";
 
 import Products from "../components/Products";
 import Solution from "../components/Solution";
+import MobileMenu from "../components/MobileMenu";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stickyMenu: false
+      stickyMenu: false,
+      modalIsOpen: false
     };
   }
+
+  handleOpenModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ modalIsOpen: false });
+  };
 
   componentDidMount() {
     window.addEventListener("scroll", () => {
@@ -26,34 +36,37 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="Home">
-        <Menu stickyMenu={this.state.stickyMenu} />
-        <div className="Home__Hero">
-          <div className="Home__Hero__container">
-            <h1>
-              MagmaLabs builds tailored software solutions to help companies
-              execute their vision.{" "}
-            </h1>
-            <p>With loyal teams achieving quick turn-around. </p>
-            {/* <ul>
-              <li>Ruby on Rails</li>
-              <li>React</li>
-              <li>React Native</li>
-              <li>Solidus</li>
-              <li>UX desing</li>
-            </ul> */}
-            <div className="technologies">
-              <p>Ruby on Rails</p>
-              <p>React</p>
-              <p>React Native</p>
-              <p>Solidus</p>
-              <p>UX desing</p>
+      <Fragment>
+        <div className="Home">
+          <Menu
+            stickyMenu={this.state.stickyMenu}
+            onOpenModal={this.handleOpenModal}
+          />
+          <div className="Home__Hero">
+            <div className="Home__Hero__container">
+              <div className="logo"></div>
+              <h1>
+                MagmaLabs builds tailored software solutions to help companies
+                execute their vision.{" "}
+              </h1>
+              <p>With loyal teams achieving quick turn-around. </p>
+              <div className="technologies">
+                <p>Ruby on Rails</p>
+                <p>React</p>
+                <p>React Native</p>
+                <p>Solidus</p>
+                <p>UX desing</p>
+              </div>
             </div>
           </div>
+          <Products />
+          <Solution />
         </div>
-        <Products />
-        <Solution />
-      </div>
+        <MobileMenu
+          isOpen={this.state.modalIsOpen}
+          onClose={this.handleCloseModal}
+        />
+      </Fragment>
     );
   }
 }

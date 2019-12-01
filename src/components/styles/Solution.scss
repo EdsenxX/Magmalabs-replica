@@ -35,8 +35,29 @@
       color: #fff;
       padding: 1rem 5rem;
       font-size: 1rem;
-      &:hover{
+      &:hover {
         filter: brightness(0.8);
+      }
+    }
+  }
+  @media only screen and (max-width: 770px) {
+    .Solution__Container {
+      width: 90%;
+      h2 {
+        font-size: 1.3rem;
+      }
+      img {
+        width: 95%;
+        max-width: 25rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+      .process {
+        width: 95%;
+      }
+      button {
+        font-size: 0.8rem;
       }
     }
   }

@@ -1,0 +1,106 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+  .Modal__container {
+    width: 50%;
+    background: #362f2f;
+    position: relative;
+    .close {
+      position: absolute;
+      color: #fff;
+      cursor: pointer;
+      font-size: 2rem;
+      margin: 0 1rem;
+    }
+    .logo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 10rem;
+      }
+    }
+    .options {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem 0;
+      .submenu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+          width: 90%;
+          padding: 0.5rem;
+          font-size: 0.8rem;
+          color: #676464;
+          &:hover {
+            background: #d0d0d0;
+          }
+          &:last-child {
+            border: none;
+            color: #676464;
+          }
+        }
+      }
+      p {
+        padding: 1rem;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          margin: 0 0.5rem;
+        }
+        cursor: pointer;
+        &:last-child {
+          color: #f84848;
+          border: 0.15rem solid #f84848;
+          border-radius: 0.2rem;
+        }
+        &:hover {
+          color: #f84848;
+        }
+      }
+    }
+    .socialNetworks {
+      width: 100%;
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        li {
+          margin: 1rem;
+          i {
+            font-size: 1.5rem;
+            color: #fff;
+            &:hover {
+              color: #f84848;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 770px) {
+    .Modal__container {
+      width: 70vw;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    .Modal__container {
+      width: 85vw;
+    }
+  }
+}

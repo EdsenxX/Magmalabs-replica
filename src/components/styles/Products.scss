@@ -20,18 +20,60 @@
         width: 13rem;
         height: 13rem;
       }
-      h3 {
-        margin: 0.5rem 0;
-        // font-family: "Montserrat", sans-serif;
+      .info {
+        width: 100%;
+        h3 {
+          margin: 0.5rem 0;
+          // font-family: "Montserrat", sans-serif;
+        }
+        p {
+          padding: 1.5rem 0;
+        }
+        .link {
+          color: #f84848;
+          cursor: pointer;
+          &:hover {
+            font-weight: 800;
+          }
+        }
       }
-      p {
-        padding: 1.5rem 0;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    margin: 0;
+    .Products__container {
+      flex-direction: column;
+      .Products__Product {
+        width: 100%;
+        border-bottom: 2px solid #ccc;
       }
-      .link {
-        color: #f84848;
-        cursor: pointer;
-        &:hover{
-          font-weight: 800;
+    }
+  }
+  @media only screen and (max-width: 750px) {
+    .Products__container {
+      flex-direction: column;
+      .Products__Product {
+        width: 100%;
+        border-bottom: 2px solid #ccc;
+        display: flex;
+        padding: 0 1rem;
+        img {
+          width: 10rem;
+          height: 10rem;
+        }
+        .info {
+          text-align: start;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-left: 1rem;
+          h3 {
+            font-size: 1rem;
+          }
+          p {
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
+          }
         }
       }
     }

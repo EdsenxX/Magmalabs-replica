@@ -16,6 +16,18 @@
     }
     .Menu__container-content {
       width: 50%;
+      .mobile-menu-icon {
+        width: 90%;
+        height: 100%;
+        display: none;
+        color: #fff;
+        font-size: 1.2rem;
+        justify-content: flex-end;
+        i {
+          cursor: pointer;
+        }
+      }
+
       ul {
         color: #fff;
         font-family: "Montserrat", sans-serif;
@@ -27,12 +39,61 @@
           font-size: 0.9rem;
           display: flex;
           align-items: center;
-          // &:hover{
-          //   border-top: 1px solid red;
-          // }
+          i {
+            margin: 0 0.2rem;
+          }
           &:last-child {
             color: red;
           }
+          .submenu {
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            top: 50px;
+            background-color: #fff;
+            border-radius: 0.2rem;
+            // min-width: 225px !important;
+            p {
+              color: #000000;
+              padding: 0.5rem;
+              width: 100%;
+              border-top: 0.1rem solid #ccc;
+              &:hover {
+                background-color: #ccc;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    .Menu__container {
+      .Menu__container-logo {
+        img {
+          width: 12rem;
+          margin: 0 1rem;
+        }
+      }
+      .Menu__container-content {
+        .mobile-menu-icon {
+          display: flex;
+        }
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 770px) {
+    .Menu__container {
+      .Menu__container-logo {
+        display: none;
+      }
+      .Menu__container-content {
+        width: 100%;
+        .mobile-menu-icon {
+          margin: 1rem;
         }
       }
     }
