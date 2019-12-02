@@ -10,14 +10,21 @@
     display: flex;
     align-items: center;
     .Menu__container__logo {
-      width: 50%;
-      img {
-        width: 15rem;
+      width: 30%;
+      .imagen {
+        // background-image: url("../../assets/img/menu/magmalabs-logo.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 217px;
+        height: 60px;
+      }
+      .conImagen {
+        background-image: url("../../assets/img/menu/magmalabs-logo.png");
       }
     }
     .Menu__container__Mobile {
       display: none;
-      width: 50%;
+      width: 70%;
       justify-content: flex-end;
       color: #fff;
       i {
@@ -26,47 +33,53 @@
       }
     }
     .Menu__container__Pages {
-      width: 50%;
+      width: 70%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
       nav {
-        width: 100%;
         ul {
+          width: 100%;
           display: flex;
-          justify-content: space-between;
+          list-style: none;
           li {
-            font-family: "Montserrat", sans-serif;
+            margin: 0 0.8rem;
             color: #fff;
+            font-family: "Montserrat", sans-serif;
             cursor: pointer;
-            list-style: none;
+            &:last-child {
+              color: #f84848;
+            }
             .dropdown {
               position: relative;
               p {
                 display: flex;
-                align-items: center;
                 i {
-                  padding-left: 0.2rem;
+                  margin-left: 0.2rem;
                 }
               }
-              .dropdown__container {
+              .dropdown-container {
                 position: absolute;
-                .dropdown__content {
-                  position: absolute;
+                z-index: 2;
+                left: -35px;
+                top: 25px;
+                .dropdown-content {
+                  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                  position: relative;
+                  min-width: 220px;
                   background-color: #f6f6f6;
                   color: #000;
-                  min-width: 225px;
                   border-radius: 2px;
-                  top: -13px;
                   p {
-                    padding: 16px 14px;
+                    padding: 12px 16px;
+                    font-size: 16px;
                     border-bottom: 0.1rem solid #e0dede;
                     &:hover {
-                      background-color: #d0d0d0;
+                      background: #d0d0d0;
                     }
                   }
                 }
               }
-            }
-            &:last-child {
-              color: #f84848;
             }
           }
         }
@@ -93,13 +106,9 @@
   // @media only screen and (max-width: 770px) {
   //   .Menu__container {
   //     .Menu__container__logo {
-  //       display: none;
   //     }
-  //     .Menu__container-content {
-  //       width: 100%;
-  //       .mobile-menu-icon {
-  //         margin: 1rem;
-  //       }
+  //     .Menu__container__Mobile {
+  //       // margin: 1rem;
   //     }
   //   }
   // }

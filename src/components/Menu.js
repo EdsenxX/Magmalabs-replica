@@ -1,34 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //assets
 import "./styles/Menu.scss";
-import Logo from "../assets/img/menu/magmalabs-logo.png";
 
 function Menu(props) {
   const MenuDiv = document.getElementById("Menu");
-  const LogoDiv = document.getElementById("logo");
-
-  if (window.innerWidth > 770) {
-    if (LogoDiv) {
-      LogoDiv.style.display = "block";
-    }
-  } else {
-    if (LogoDiv) {
-      LogoDiv.style.display = "none";
-    }
-  }
 
   if (props.stickyMenu) {
     MenuDiv.classList.add("sticky", "animated", "fadeInDown");
-    LogoDiv.style.display = "block";
   } else {
     if (MenuDiv) {
       MenuDiv.classList.remove("sticky", "animated", "fadeInDown");
-      if (window.innerWidth <= 770) {
-        LogoDiv.style.display = "none";
-      }
     }
   }
+
+  const [quitarLogo, setQuitarLogo] = useState(window.innerWidth <= 770);
+
+  useEffect(() => {
+    setQuitarLogo(window.innerWidth <= 770);
+    const Logo = document.getElementById("logo");
+    if (!quitarLogo) {
+      Logo.classList.add("conImagen");
+    } else if (quitarLogo && props.stickyMenu) {
+      Logo.classList.add("conImagen");
+    } else if (quitarLogo) {
+      Logo.classList.remove("conImagen");
+    }
+  });
 
   const [mostrarSubMenu, setMostrarSubMenu] = useState(false);
 
@@ -43,8 +41,8 @@ function Menu(props) {
   return (
     <div className="Menu" id="Menu">
       <div className="Menu__container">
-        <div className="Menu__container__logo" id="logo">
-          <img src={Logo} alt="magmalabs logo" />
+        <div className="Menu__container__logo">
+          <div className="imagen" id="logo"></div>
         </div>
         <div className="Menu__container__Mobile">
           <i className="fas fa-bars" onClick={props.onOpenModal}></i>
@@ -62,24 +60,16 @@ function Menu(props) {
                       }`}
                     ></i>
                   </p>
-                  {/* {mostrarSubMenu ? (
-                    <div className="dropdown__container">
-                      <div className="dropdown__content">
+                  {mostrarSubMenu ? (
+                    <div className="dropdown-container">
+                      <div className="dropdown-content">
                         <p>Web development</p>
                         <p>Ecommerce solutions</p>
                         <p>Mobile development</p>
                         <p>UX/UI design</p>
                       </div>
                     </div>
-                  ) : null} */}
-                  <div className="dropdown__container">
-                    <div className="dropdown__content">
-                      <p>Web development</p>
-                      <p>Ecommerce solutions</p>
-                      <p>Mobile development</p>
-                      <p>UX/UI design</p>
-                    </div>
-                  </div>
+                  ) : null}
                 </div>
               </li>
               <li>CASE STUDIES</li>
