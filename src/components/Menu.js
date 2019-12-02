@@ -42,38 +42,54 @@ function Menu(props) {
 
   return (
     <div className="Menu" id="Menu">
-      <nav className="Menu__container">
-        <div className="Menu__container-logo" id="logo">
-          <img src={Logo} alt="Magmalabs logo" />
+      <div className="Menu__container">
+        <div className="Menu__container__logo" id="logo">
+          <img src={Logo} alt="magmalabs logo" />
         </div>
-        <div className="Menu__container-content">
-          <div className="mobile-menu-icon">
-            <i className="fas fa-bars" onClick={props.onOpenModal}></i>
-          </div>
-          <ul>
-            <li onClick={mostrar}>
-              OUR SERVICES
-              <i
-                className={
-                  mostrarSubMenu ? "fas fa-chevron-up" : "fas fa-chevron-down"
-                }
-              ></i>
-              {mostrarSubMenu ? (
-                <div className="submenu">
-                  <p>WEB DEVELOPMENT</p>
-                  <p>ECOMMERCE SOLUTIONS</p>
-                  <p>MOBILE DEVELOPMENT</p>
-                  <p>UX/UI DESIGN</p>
+        <div className="Menu__container__Mobile">
+          <i className="fas fa-bars" onClick={props.onOpenModal}></i>
+        </div>
+        <div className="Menu__container__Pages">
+          <nav>
+            <ul>
+              <li>
+                <div className="dropdown">
+                  <p onClick={mostrar}>
+                    OUR SERVICES
+                    <i
+                      className={`fas fa-chevron-${
+                        mostrarSubMenu ? "up" : "down"
+                      }`}
+                    ></i>
+                  </p>
+                  {/* {mostrarSubMenu ? (
+                    <div className="dropdown__container">
+                      <div className="dropdown__content">
+                        <p>Web development</p>
+                        <p>Ecommerce solutions</p>
+                        <p>Mobile development</p>
+                        <p>UX/UI design</p>
+                      </div>
+                    </div>
+                  ) : null} */}
+                  <div className="dropdown__container">
+                    <div className="dropdown__content">
+                      <p>Web development</p>
+                      <p>Ecommerce solutions</p>
+                      <p>Mobile development</p>
+                      <p>UX/UI design</p>
+                    </div>
+                  </div>
                 </div>
-              ) : null}
-            </li>
-            <li>CASE STUDIES</li>
-            <li>ABOUT US</li>
-            <li>BLOG</li>
-            <li>CONTACT US</li>
-          </ul>
+              </li>
+              <li>CASE STUDIES</li>
+              <li>ABOUT US</li>
+              <li>BLOG</li>
+              <li>CONTACT US</li>
+            </ul>
+          </nav>
         </div>
-      </nav>
+      </div>
     </div>
   );
 }
